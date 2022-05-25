@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: "Lato", sans-serif;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    background-color: #fff01b;
+}
+
+.sidenav {
+  height: 100%;
+  width: 20%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(160, 20, 20);
+  overflow-x: auto;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 19px;
+  text-decoration: none;
+  font-size: 2vw;
+  color: #f7f4f4;
+  font-weight: bold;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #08fb35;
+}
+
+.main {
+  margin-left: 20%; /* Same as the width of the sidenav */
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+img{
+    width: 50%;
+    margin-left: 25%;
+}
+
+.title {
+margin-top: 10px; /* Same as the width of the sidenav*/
+padding :1%;
+background-color: rgb(160, 20, 20) ;
+color: #fff;
+border-radius: 10px;
+font-size: 2vw;
+}
+
+.info {
+  margin-left: 0%; /* Same as the width of the sidenav*/
+padding:1%;
+background-color: rgb(160, 20, 20) ;
+color: #fff;
+border-radius: 10px;
+font-size: 1vw;
+text-align: center;
+}
+
+a{
+  text-decoration: none;
+  color: #08fb35;
+}
+
+
+</style>
+</head>
+<body>
+
+<div class="sidenav">
+  <a href="site5.html">Home</a>
+  <a href="sandwitches.html">Sandwitches</a>
+  <a href="pizza.html">Pizza</a>
+  <a href="extra.html">Extra</a>
+  <a href="login.html">Login</a>
+</div>
+
+<div class="main">
+  <div class="title">
+  <h2>Wellcome to, Papa Paul's..</h2>
+  </div>
+  <br>
+  <img src="BIG-ZACK.jpg" alt="logo">
+  <br><br>
+  <div class="info">
+    <p>We are always known with our (100%) fresh food as always shown.</p>
+  <p>What are you waiting for, Order NOW.</p>
+  <p>Please, <a href="login.html">login</a>/<a href="register.html">Register</a> first in order to be able to order a delivery and not miss any offer!</p>
+  </div>
+
+</div>
+   
+</body>
+</html> 
