@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: "Lato", sans-serif;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+.sidenav {
+  height: 100%;
+  width: 20%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(160, 20, 20);
+  overflow-x: auto;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 19px;
+  text-decoration: none;
+  font-size: 2vw;
+  color: #f7f4f4;
+  font-weight: bold;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #08fb35;
+}
+
+.main {
+  margin-left: 160px; /* Same as the width of the sidenav */
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+
+
+
+
+
+
+
+
+
+.container {
+margin: 0px;
+padding-top: 0px;
+margin-left: 20%;
+background-color: #fff01b;
+height: 100%;
+width: 80%;
+display: flex;
+flex-direction: column;
+overflow: visible;
+
+
+}
+
+.cell {
+  background-color: rgb(160, 20, 20);
+  width: 40%;
+  height: 50%;
+  margin-left: 30%;
+  margin-top: 10%;
+  line-height: 75px;
+  font-size: 6vw;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,.5);
+  
+  
+  
+  position: relative;
+}
+
+/*.img{
+  
+  color: #f7f4f4;
+  display: flex;
+  width: 100%; 
+  height:100%; 
+  border-radius: 5px;
+}*/
+
+img {
+  width: 100%;
+  height: 10%;
+  position: relative;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+/*.info {
+width: 50%;
+text-align: justify;
+}*/
+
+.name{
+  text-align: center;
+  padding-left: 10px;
+  color: #fff01b;
+  font-weight: bold;
+  font-size: 2.5vw;
+  line-height: 25%;
+  
+}
+
+.desc {
+  font-size: 25%;
+  font-style: oblique;
+  color: #dad8d8;
+  line-height: normal;
+  margin: 5%;
+  text-align:justify;
+
+}
+
+
+div input{
+  margin-left: 20%;
+  width: 60%;
+  height: 15%;
+  cursor: grab;
+  background-color: #1aff00;
+  font-weight:bold ;
+  font-size: 1.5vw;
+}
+
+
+
+</style>
+
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body>
+
+<div class="sidenav">
+  <a href="site5.html">Home</a>
+  <a href="sandwitches.html">Sandwitches</a>
+  <a href="pizza.html">Pizza</a>
+  <a href="extra.html">Extra</a>
+  <a href="login.html">Login</a>
+</div>
+
+<div class="container">
+
+
+  
+
+  <div class="cell">
+
+        <!--<div class="img">-->
+            <img src="BIG-ZACK.jpg" alt="Super ANGUS pic">
+        <br>
+        <!--<div class="info">-->
+            <p class="name">Superstar ANGUS</p>
+            
+            <p class="desc">
+              2 Layers of Fried Chicken, Two Cheddar Slices, Mayonnaise, Lettuce, Tomato, Oinion, Pickles, BBQ sauce, Melted Cheddar, Turkey and Onion Rings.
+              Served with French Fries and Coleslaw    Our crispy breaded 100% all-white meat chicken fillet on a layer of lettuce and mayo inside our special sesame bun.
+            </p>
+            <input type="button" value=" Order now for 60 LE" onclick="buy()">
+        
+  </div>
+
+
+  <div class="cell">
+    <div class="img">
+        <img src="sandw2.jpg" alt="COWBOY Chicken pic">
+    </div>
+    <div class="info">
+        <p class="name">COWBOY Chicken</p>
+        <p class="desc">
+           Fried Chicken Breast, Mayonnaise, Lettuce, Tomato, Pickles, Two Cheddar Slices and Melted Cheddar.
+          Served with French Fries and Coleslaw.  Our crispy breaded 100% all-white meat chicken fillet on a layer of lettuce and mayo inside our special sesame bun.
+          <br><br><br>
+          <input type="button" value=" Order now for 60 LE" onclick="buy()">
+          <br><br>
+        </p>
+    </div>
+</div>
+
+
+<div class="cell">
+  <div class="img">
+      <img src="sandw3.jpg" alt="Modzarella MADNESS pic">
+  </div>
+  <div class="info">
+      <p class="name">Modzzarella MADNESS</p>
+      <p class="desc">
+        Boneless Fried Chicken Breast, Mayonnaise, Lettuce, Tomato, Pickles, Two Mozzarella Sticks and Melted Cheddar.
+        Served with French Fries and Coleslaw.   Our crispy breaded 100% all-white meat chicken fillet on a layer of lettuce and mayo inside our special sesame bun.
+        <br><br><br>
+        <input type="button" value=" Order now for 60 LE" onclick="buy()">
+        <br><br>
+      </p>
+  </div>
+</div>
+   
+
+<div class="cell" style="margin-bottom: 10%;">
+  <div class="img">
+      <img src="sandw4.webp" alt="Cheesy SUPREMER pic">
+  </div>
+  <div class="info">
+      <p class="name">Cheesy SUPREMER</p>
+      <p class="desc">
+        2 Layers of Fried Chicken, Two Cheddar Slices, Mayonnaise, Lettuce, Tomato, Oinion, Pickles, BBQ sauce, Melted Cheddar, Turkey and Onion Rings.
+        Served with French Fries and Coleslaw    Our crispy breaded 100% all-white meat chicken fillet on a layer of lettuce and mayo inside our special sesame bun.
+        <br><br><br>
+        <input type="button" value=" Order now for 60 LE" onclick="buy()">
+        <br><br>
+      </p>
+  </div>
+</div>
+
+
+
+</div>
+
+<script>
+  function buy(){
+    alert('Your Sandwitch has been ordered successfully ;)')
+  }
+
+
+</script>
+  
+  
+
+
+
+   
+</body>
+</html> 
