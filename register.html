@@ -43,7 +43,7 @@
 <body>
     <div>
         <center>
-    <form onsubmit="validate()" action="validate()" >
+    <form onsubmit="return validate()" action="/action_page.asp" >
         
         <table >
          <th colspan="2">
@@ -56,22 +56,16 @@
         </tr>
          <tr>
           <td>Name :</td>
-          <td><input type="text" placeholder="name"  ></td> <br>
+          <td><input type="text" placeholder="name" title="Please type letters only" pattern="[A-Za-z]{0,15}[^0-9^ ]+" required ></td> <br>
          </tr>
          <tr>
             <td>Last Name :</td>
-            <td><input type="text" placeholder="last name" ></td> <br>
+            <td><input type="text" placeholder="last name"  title="Please type letters only" pattern="[A-Za-z]{0,15}[^0-9^ ]+" required ></td> <br>
         </tr>
         
          <tr>
           <td>Email :</td>
-          <td>
-              <br><br>
-              <input type="email" id="email" onclick="correct()" placeholder="paula@gmail.com" >
-                <br><br>
-                <p id="em"  ></p>
-        
-            </td>
+          <td><input type="email" placeholder="paula@gmail.com"  pattern="[A-Za-z0-9_\.]{1,15}@[A-Za-z]{1,15}\.com" title="Invalid e-mail" required></td>
          </tr>
          <tr>
           <td>Phone no :</td>
@@ -82,19 +76,19 @@
             <option>010</option>
             <option>015</option>
            </select>
-           <input type="phone" id="phone" placeholder=""123456789" >
+           <input type="phone" placeholder="12345678" pattern="[0-9]{7}[^A-Z^a-z^ ]" title="8 Numbers only" required>
           </td>
          </tr>
          <tr>
             <td>Address :</td>
-            <td><input type="text" placeholder="Address" ></td> <br>
+            <td><input type="text" placeholder="Address" required></td> <br>
         </tr>
          <tr>
          
          <tr>
           <td>Gender :</td>
           <td>
-            <select>
+            <select required>
                 <option selected>male</option>
                 <option>female</option>
             </select>
@@ -104,14 +98,14 @@
             <td>Password :</td>
             <td>
                 <br><br>
-                <input type="password" id="password" name="psw"  title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" placeholder="password" required>
+                <input type="password" id="password" name="psw"  title="Must start with Uppercase ,contain at least one number , one Special character(-,_,#,&,*) , exactly 8 characters no more no less and no White spaces" placeholder="password" required>
                 <br>
                 <p id="pw"></p>
             </td>
         </tr>
          <tr >
             <td colspan="2">
-                <input type="submit" onsubmit="return validate()" onclick="return validate()" value="register" ></td> 
+                <input type="submit" value="register" ></td> 
             </td>
          </tr>
          <tr>
@@ -131,60 +125,41 @@
 
 <script>
 
-// email validation
- function correct() {
 
-    var email = document.getElenentById("email").value;
-
-    if(email.search(/.com$/i) == -1){
-        document.getElementById("em").style.color="black";
-		document.getElementById("em").innerHTML="Must end with (.com)";
-                return false;
-    }else if(email.search(/@/i) == -1){
-        document.getElementById("em").style.color="black";
-		document.getElementById("em").innerHTML="Must contain  @";
-                return false;
-    }
-}
-
-// password validation
 function validate() {
 
+    
+
     var input = document.getElementById('password').value;
-    var phone = document.getElementById('phone').value;
+    
 
-
-    if (input.charAt(0).toUpperCase()!= input.charAt(0) ){  
+    if (input.charAt(0).search(/[A-Z]/) == -1){  
 		document.getElementById("pw").style.color="black";
 		document.getElementById("pw").innerHTML="Must Srarts With Capital Letter";
                 return false;
 
-    }else if (input.search(/[-_#&*]/i) < 0) {
+    }else if (input.search(/[\_\#\*\&\-]/) == -1) {
 		document.getElementById("pw").style.color="black";
 		document.getElementById("pw").innerHTML="Must contain one of -_#&*";
                 return false;
-//  phone number vaalidation
-    }else if(phone.length != 8 ){
-		document.getElementById("pw").style.color="black";
-		document.getElementById("pw").innerHTML="Phone number length should be 8";
-		return false;
-	}else if (input.search(/[0-9]/) == -1) {
+
+    }else if (input.search(/[0-9]/) == -1) {
 		document.getElementById("pw").style.color="black";
 		document.getElementById("pw").innerHTML="Must contain a number";
                 return false;
     }else if (input.length != 8) {
 		document.getElementById("pw").style.color="black";
 		document.getElementById("pw").innerHTML="Password must contain exactly 8 characters";
-                return false;}
+                return false;
     
+    }else if (input.search(/\s/) > 0) {
+        document.getElementById("pw").innerHTML = "No white spaces are allowed"
+        return false;
     
-
     }else {
-
-        alert('Password is accepted');
+        alert('Welcome!');
         return true;
     }
-
 
 }
 
